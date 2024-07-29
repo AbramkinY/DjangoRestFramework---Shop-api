@@ -5,3 +5,5 @@ WORKDIR /web_django
 COPY req.txt /web_django/
 RUN pip install --upgrade pip && pip install -r req.txt
 ADD . /web_django/ 
+EXPOSE 8000
+CMD [ "python3", "manage.py", "runserver"]
